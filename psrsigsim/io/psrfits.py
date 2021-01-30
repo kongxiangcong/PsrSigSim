@@ -5,6 +5,8 @@ from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 import numpy as np
 import fitsio
+import sys
+sys.path.insert(0,'/Users/hazboun/software_development/PulsarDataToolbox/')
 import pdat
 from .file import BaseFile
 from ..utils import make_quant
@@ -335,8 +337,9 @@ class PSRFITS(BaseFile):
         print(np.shape(Out))
         # We assign the data in the appropriate shape
         for ii in range(self.nsubint):
-            idx0 = 0 + ii*2048
-            idxF = idx0 + 2048
+            print(f'\r{ii}', end='', flush=True)
+            idx0 = 0 + ii*self.nbin
+            idxF = idx0 + self.nbin
             Out[ii,0,:,:] = sim_sig[:,idx0:idxF]
 
         self.copy_psrfit_BinTables()
@@ -578,10 +581,10 @@ class PSRFITS(BaseFile):
     def _get_pfit_bin_table_entry(self, extname, key, row=0):
         """Retrieve a single header entry from PSRFITS file."""
         idx = self.file.draft_hdr_keys.index(extname)
-        try:
-            return self.file.fits_template[idx][key][row][0]
-        except:
-            return self.file.fits_template[idx][key][row]
+        # try:
+        #     return self.file.fits_template[idx][key][row][0]
+        # except:
+        return self.file.fits_template[idx][key][row]
 
     def _get_pfit_bin_entry(self, extname, key, row=0):
         """Retrieve a single header entry from PSRFITS file.
@@ -597,8 +600,8 @@ class PSRFITS(BaseFile):
         """
         idx = self.file.draft_hdr_keys.index(extname)
         for val in self.file.fits_template[idx][:]:
-            if param == val[0].split()[0].decode("utf-8"):
-                return np.float64(val[0].split()[1].decode("utf-8").replace("D","E"))
+            if param == val[0].split()[0]:#.decode("utf-8"):
+                return np.float64(val[0].split()[1].replace("D","E"))#.decode("utf-8")
 
     #### Define various PSRFITS parameters
     @property

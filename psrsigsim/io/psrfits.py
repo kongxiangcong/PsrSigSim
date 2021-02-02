@@ -371,13 +371,13 @@ class PSRFITS(BaseFile):
                 qq = ii
             if eq_wts:
                 # Get the shapes of the wieghts, scales, and offs arrays, assumes we want to reset these to all be equal
-                if len(np.shape(self.file.fits_template['SUBINT'][0]['DAT_SCL'])) != 1:
+                if len(np.shape(self.file.fits_template['SUBINT'][0]['DAT_SCL'])) > 1:
                     scale_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_SCL'][:,:self.nchan*self.npol])
                     offs_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_OFFS'][:,:self.nchan*self.npol])
                     weight_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_WTS'][:,:self.nchan])
                 else:
-                    scale_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_SCL'][:])
-                    offs_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_OFFS'][:])
+                    scale_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_SCL'])
+                    offs_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_OFFS'])
                     weight_shape = np.shape(self.file.fits_template['SUBINT'][qq]['DAT_WTS'])
                 # Now assign the values
                 #print(scale_shape, offs_shape, weight_shape)
@@ -616,9 +616,9 @@ class PSRFITS(BaseFile):
         """Retrieve a single header entry from PSRFITS file."""
         idx = self.file.draft_hdr_keys.index(extname)
         try:
-            return self.file.fits_template[idx][key][row][0]
-        except:
             return self.file.fits_template[idx][key][row]
+        except:
+            return self.file.fits_template[idx][key][row][0]
 
     def _get_pfit_bin_entry(self, extname, key, row=0):
         """Retrieve a single header entry from PSRFITS file.
@@ -634,8 +634,8 @@ class PSRFITS(BaseFile):
         """
         idx = self.file.draft_hdr_keys.index(extname)
         for val in self.file.fits_template[idx][:]:
-            if param == val[0].split()[0].decode("utf-8"):
-                return np.float64(val[0].split()[1].decode("utf-8").replace("D","E"))
+            if param == val[0].split()[0]:
+                return np.float64(val[0].split()[1].replace("D","E"))
 
     #### Define various PSRFITS parameters
     @property

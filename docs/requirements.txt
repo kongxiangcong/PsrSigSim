@@ -3,7 +3,7 @@ scipy>=1.0.0
 matplotlib>=2.1.1
 astropy>=4.0
 #pdat>=0.2
-git+https://github.com/Hazboun6/PulsarDataToolbox.git@psrfits_reform#egg=pdat
+git+https://github.com/Hazboun6/PulsarDataToolbox.git@psrfits_reform
 fitsio>=1.0
 pint-pulsar>=0.7
 

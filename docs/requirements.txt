@@ -3,7 +3,7 @@ scipy>=1.0.0
 matplotlib>=2.1.1
 astropy>=4.0
 #pdat>=0.2
--e git+https://github.com/Hazboun6/PulsarDataToolbox.git@jsh-fitsio-update
+-e git+https://github.com/Hazboun6/PulsarDataToolbox.git@jsh-fitsio-update#egg=pdat
 fitsio>=1.0
 pint-pulsar>=0.7
 

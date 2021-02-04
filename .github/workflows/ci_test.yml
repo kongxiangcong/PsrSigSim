@@ -33,7 +33,7 @@ jobs:
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
     - name: Test with pytest
       run: |
-        pytest --rootdir='/home/runner/work/PsrSigSim/psrsigsim' --cov=psrsigsim --cov-report=xml
+        pytest psrsigsim --cov=psrsigsim --cov-report=xml
         make lint
     - name: Codecov
       uses: codecov/codecov-action@v1

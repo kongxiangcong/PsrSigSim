@@ -581,10 +581,10 @@ class PSRFITS(BaseFile):
     def _get_pfit_bin_table_entry(self, extname, key, row=0):
         """Retrieve a single header entry from PSRFITS file."""
         idx = self.file.draft_hdr_keys.index(extname)
-        # try:
-        #     return self.file.fits_template[idx][key][row][0]
-        # except:
-        return self.file.fits_template[idx][key][row]
+        try:
+            return self.file.fits_template[idx][key][row][0]
+        except:
+            return self.file.fits_template[idx][key][row]
 
     def _get_pfit_bin_entry(self, extname, key, row=0):
         """Retrieve a single header entry from PSRFITS file.
@@ -600,8 +600,8 @@ class PSRFITS(BaseFile):
         """
         idx = self.file.draft_hdr_keys.index(extname)
         for val in self.file.fits_template[idx][:]:
-            if param == val[0].split()[0]:#.decode("utf-8"):
-                return np.float64(val[0].split()[1].replace("D","E"))#.decode("utf-8")
+            if param == val[0].split()[0].decode("utf-8"):
+                return np.float64(val[0].split()[1].replace("D","E")).decode("utf-8")
 
     #### Define various PSRFITS parameters
     @property

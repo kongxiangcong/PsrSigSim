@@ -1,4 +1,4 @@
-numpy>=1.16.4, <1.20 --force-reinstall --ignore-installed --no-binary :all: numpy
+numpy>=1.17.3 --force-reinstall --ignore-installed --no-binary :all: numpy
 fitsio==0.9.12
 scipy>=1.0.0
 matplotlib>=2.1.1

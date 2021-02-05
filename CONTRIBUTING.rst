@@ -38,8 +38,8 @@ and "help wanted" is open to whoever wants to implement it.
 Write Documentation
 ~~~~~~~~~~~~~~~~~~~
 
-PsrSimSig could always use more documentation, whether as part of the
-official PsrSimSig docs, in docstrings, or even on the web in blog posts,
+`PsrSimSig` could always use more documentation, whether as part of the
+official `PsrSimSig` docs, in docstrings, or even on the web in blog posts,
 articles, and such.
 
 Submit Feedback
@@ -57,9 +57,9 @@ If you are proposing a feature:
 Get Started!
 ------------
 
-Ready to contribute? Here's how to set up `psrsigsim` for local development.
+Ready to contribute? Here's how to set up `PsrSigSim` for local development.
 
-1. Fork the `psrsigsim` repo on GitHub.
+1. Fork the `PsrSigSim` repo on GitHub.
 2. Clone your fork locally::
 
     $ git clone git@github.com:your_name_here/psrsigsim.git
@@ -102,7 +102,7 @@ Before you submit a pull request, check that it meets these guidelines:
    your new functionality into a function with a docstring, and add the
    feature to the list in README.rst.
 3. The pull request should work for Python 2.7, 3.5, and 3.6. Check
-   https://travis-ci.org/PsrSigSim/PsrSigSim/pull_requests
+   https://github.com/PsrSigSim/PsrSigSim/actions
    and make sure that the tests pass for all supported Python versions.
 
 Tips

@@ -601,7 +601,7 @@ class PSRFITS(BaseFile):
         idx = self.file.draft_hdr_keys.index(extname)
         for val in self.file.fits_template[idx][:]:
             if param == val[0].split()[0].decode("utf-8"):
-                return np.float64(val[0].split()[1].replace("D","E")).decode("utf-8")
+                return np.float64(val[0].split()[1].decode("utf-8").replace("D","E"))
 
     #### Define various PSRFITS parameters
     @property

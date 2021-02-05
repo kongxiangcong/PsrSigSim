@@ -5,6 +5,8 @@ from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 import numpy as np
 import fitsio
+import sys
+sys.path.insert(0,'/Users/hazboun/software_development/PulsarDataToolbox/')
 import pdat
 from .file import BaseFile
 from ..utils import make_quant, make_par
@@ -315,7 +317,7 @@ class PSRFITS(BaseFile):
         pulsar [class] : pulsar type class used to generate the signal, used for
                         metadata access.
         parfile [string] : path to par file used to generate the polycos. The observing frequency, and observatory will
-                            come from the par file. If not provided, a basic par file will be 
+                            come from the par file. If not provided, a basic par file will be
                             created and saved along with the PSRFITS file.
         MJD_start [float] : Start MJD of the polyco. Should start no later than the beginning of the observation.
         segLength [float] : Length in minutes of the range covered by the polycos generated. Default is 60 minutes.
@@ -342,7 +344,7 @@ class PSRFITS(BaseFile):
         # Check the inclination length
         if inc_len == 0.0:
             inc_len = MJD_start - ref_MJD
-        
+
         # If mode not search, set nsblk to 1
         if self.obs_mode != 'SEARCH':
             self.nsblk = 1

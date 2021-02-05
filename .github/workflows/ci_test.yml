@@ -1,6 +1,6 @@
 name: PsrSigSim Build
 
-on: [pull_request]
+on: [pull_request, push]
 
 jobs:
   build:
@@ -23,6 +23,8 @@ jobs:
         python -m pip install --upgrade pip setuptools wheel
         pip install flake8 pytest
         #if [ -f requirements.txt ]; then pip install -r requirements.txt; fi
+        pip uninstall numpy
+        pip install numpy==1.19.5 --no-binary numpy
         pip install -r requirements.txt
         pip install -r requirements_dev.txt
     - name: Lint with flake8

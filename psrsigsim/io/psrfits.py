@@ -5,6 +5,8 @@ from __future__ import (absolute_import, division,
                         print_function, unicode_literals)
 import numpy as np
 import fitsio
+import sys
+sys.path.insert(0,'/Users/hazboun/software_development/PulsarDataToolbox/')
 import pdat
 from .file import BaseFile
 from ..utils import make_quant
@@ -335,8 +337,9 @@ class PSRFITS(BaseFile):
         print(np.shape(Out))
         # We assign the data in the appropriate shape
         for ii in range(self.nsubint):
-            idx0 = 0 + ii*2048
-            idxF = idx0 + 2048
+            print(f'\r{ii}', end='', flush=True)
+            idx0 = 0 + ii*self.nbin
+            idxF = idx0 + self.nbin
             Out[ii,0,:,:] = sim_sig[:,idx0:idxF]
 
         self.copy_psrfit_BinTables()

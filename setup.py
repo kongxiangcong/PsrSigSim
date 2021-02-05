@@ -15,7 +15,6 @@ requirements = [
     'numpy<=1.17.3',
     'scipy',
     'matplotlib>=2.0.0',
-    'h5py',
     'pdat',
     'pint-pulsar',
 ]

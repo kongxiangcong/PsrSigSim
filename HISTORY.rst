@@ -1,6 +1,11 @@
 =======
 History
 =======
+1.0.1 (2021-02-08)
+------------------
+
+* Various changes to documentation and metadata coinciding with JOSS review.
+
 1.0.0 (2020-10-15)
 ------------------
 

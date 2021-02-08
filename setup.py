@@ -31,7 +31,7 @@ test_requirements = [
 
 setup(
     name='psrsigsim',
-    version='1.0.0',
+    version='1.0.1',
     description="The NANOGrav Pulsar Signal Simulator.",
     long_description=readme + '\n\n' + history,
     author="Jeffrey S. Hazboun",

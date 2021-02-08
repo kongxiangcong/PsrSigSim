@@ -391,11 +391,11 @@ Note about randomly generated pulses and noise
 ``PsrSigSim`` uses ``numpy.random`` under the hood in order to generate
 the radio pulses and various types of noise. If a user desires or
 requires that this randomly generated data is reproducible we recommend
-using a call the seed generator native to ``Numpy`` before calling the
+using a call to the seed generator native to ``Numpy`` before calling the
 function that produces the random noise/pulses. Newer versions of
 ``Numpy`` are moving toward slightly different
 `functionality/syntax <https://numpy.org/doc/stable/reference/random/index.html>`__,
-but is essentially used in the same way.
+but are essentially used in the same way.
 
 ::
 

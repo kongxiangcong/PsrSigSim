@@ -6,7 +6,7 @@ PsrSigSim
 .. image:: https://img.shields.io/pypi/v/psrsigsim.svg
         :target: https://pypi.python.org/pypi/psrsigsim
 
-.. image:: https://github.com/PsrSigSim/PsrSigSim/workflows/PsrSigSim%20Build/badge.svg
+.. image:: https://github.com/PsrSigSim/PsrSigSim/workflows/PsrSigSim%20Build/badge.svg?branch=master
         :target: https://github.com/PsrSigSim/PsrSigSim/actions
 
 .. image:: https://readthedocs.org/projects/psrsigsim/badge/?version=latest

@@ -13,8 +13,11 @@ PsrSigSim
         :target: https://psrsigsim.readthedocs.io/en/latest/?badge=latest
         :alt: Documentation Status
 
+.. image:: https://joss.theoj.org/papers/6f2caac6394c899d461075963b5d7e45/status.svg
+        :target: https://joss.theoj.org/papers/6f2caac6394c899d461075963b5d7e45
+
 .. image:: https://zenodo.org/badge/DOI/10.5281/zenodo.4521235.svg
-   :target: https://doi.org/10.5281/zenodo.4521235
+        :target: https://doi.org/10.5281/zenodo.4521235
 
 The NANOGrav Pulsar Signal Simulator
 ------------------------------------

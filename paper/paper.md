@@ -55,7 +55,7 @@ affiliations:
    index: 8
 date: 6 August 2020
 bibliography: paper.bib
-aas-doi: 10.3847/xxxxx
+aas-doi: 10.3847/1538-4357/abdc29
 aas-journal: Astrophysical Journal
 ---
 
